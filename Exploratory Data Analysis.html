@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome! &#8212; Data Science for Business</title>
+    <title>Exploratory Data Analysis &#8212; Data Science for Business</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Exploratory Data Analysis" href="Exploratory%20Data%20Analysis.html" />
+    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="prev" title="Welcome!" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,15 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Welcome!
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Exploratory%20Data%20Analysis.html">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Exploratory Data Analysis
   </a>
  </li>
@@ -184,6 +187,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Exploratory Data Analysis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -223,7 +255,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FExploratory Data Analysis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -251,7 +283,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/Exploratory Data Analysis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -262,7 +294,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -288,23 +320,114 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistics">
+   Statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-terms-for-data-types">
+   Key terms for data types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rectangular-data">
+   Rectangular data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonrectangular-data-structures">
+   Nonrectangular Data Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimates-of-location">
+   Estimates of Location
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mean-or-average-value">
+     Mean or Average value:
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Welcome!</h1>
+                <h1>Exploratory Data Analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistics">
+   Statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-terms-for-data-types">
+   Key terms for data types
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rectangular-data">
+   Rectangular data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonrectangular-data-structures">
+   Nonrectangular Data Structures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimates-of-location">
+   Estimates of Location
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mean-or-average-value">
+     Mean or Average value:
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -312,20 +435,64 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this headline">#</a></h1>
-<p><strong>By <a class="reference external" href="https://www.linkedin.com/in/jarmandopl/">Armando Peña</a></strong></p>
-<p>I made this site to share my learning path and knowledge of data analytics.</p>
-<p>I also want to give free and easy access to this information for people interested in learning data analytics.</p>
-<p>I hope you find this website interesting and useful.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="exploratory-data-analysis">
+<h1>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">#</a></h1>
+<section id="statistics">
+<h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">#</a></h2>
+<p>Is a branch of applied mathematics that involves the collection, description, analysis, and inference of conclusions from quantitative data.</p>
+</section>
+<section id="key-terms-for-data-types">
+<h2>Key terms for data types<a class="headerlink" href="#key-terms-for-data-types" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Numeric</strong>: Data expressed on a numerical scale</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Exploratory%20Data%20Analysis.html">Exploratory Data Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li><p><strong>Continuous</strong>: Tada that can take on any value in an interval (interval, float, numeric). E.g. time duration or wind speed.</p></li>
+<li><p><strong>Discrete</strong>: Can take on only integer values such as counts. (integer, count). E.g. Count of the occurrence of an event.</p></li>
 </ul>
-</div>
+</li>
+<li><p><strong>Categorical</strong>: Can take on only a specific set of values representing a set of possible categories (enums, enumerated, factors, nominal, polychotomous). E.g. A fixed set of values such as the type of something or a state name.</p>
+<ul>
+<li><p><strong>Binary</strong>: Just two categories of values (dichotomous, logical, indicator, boolean). E.g. 0 or 1, true or false</p></li>
+<li><p><strong>Ordinal</strong>: Categorical data that has an explicit ordering (ordered factor). E.g. A numerical rating (1, 2 or 3).</p></li>
+</ul>
+</li>
+</ul>
+<p>The data type is important to help determine the type of visual display, data analysis or statistical model.</p>
+</section>
+<section id="rectangular-data">
+<h2>Rectangular data<a class="headerlink" href="#rectangular-data" title="Permalink to this headline">#</a></h2>
+<p>A two-dimensional matrix with rows indicating records (cases) and columns indicating features (variables).
+Unstructured data must be processed and manipulated so that it can be represented as a set of features in a rectangular data.</p>
+<ul class="simple">
+<li><p><strong>Data Frame</strong>: rectangular data (like a spreadsheet)</p></li>
+<li><p><strong>Feature</strong>: A column within a table (attribute, input, predictor, variable)</p></li>
+<li><p><strong>Outcome</strong>: (dependent variable, response, target, output).</p></li>
+<li><p><strong>Records</strong>: A row  within a table (case, example, instance, observation, pattern, sample).</p></li>
+</ul>
+</section>
+<section id="nonrectangular-data-structures">
+<h2>Nonrectangular Data Structures<a class="headerlink" href="#nonrectangular-data-structures" title="Permalink to this headline">#</a></h2>
+<p>Graph data structures are used to represent physical, social and abstract relationships. They are useful to for certain types of problems such as network optimization.</p>
+</section>
+<section id="estimates-of-location">
+<h2>Estimates of Location<a class="headerlink" href="#estimates-of-location" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Mean</strong></p></li>
+<li><p><strong>Weighted mean</strong></p></li>
+<li><p><strong>Median</strong></p></li>
+<li><p><strong>Percentile</strong></p></li>
+<li><p><strong>Weighted median</strong></p></li>
+<li><p><strong>Trimmed mean</strong></p></li>
+<li><p><strong>Robust</strong></p></li>
+<li><p><strong>Outlier</strong></p></li>
+</ul>
+<section id="mean-or-average-value">
+<h3>Mean or Average value:<a class="headerlink" href="#mean-or-average-value" title="Permalink to this headline">#</a></h3>
+<p>Is the sum of all values divided by the number of values.</p>
+<div class="math notranslate nohighlight">
+\[\bar x =  \frac{\sum _{i=1}^{n} x_i}{n} \]</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -355,10 +522,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Exploratory%20Data%20Analysis.html" title="next page">
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome!</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="markdown.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exploratory Data Analysis</p>
+        <p class="prev-next-title">Markdown Files</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
