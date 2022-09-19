@@ -1,16 +1,19 @@
-# Data Science For Business!
+# Armando's portfolio
 
 
-**By [Armando Peña](https://www.linkedin.com/in/jarmandopl/)**
+**[My LinkedIn](https://www.linkedin.com/in/jarmandopl/)**
 
-I made this site to share my learning path and knowledge of data analytics. 
+Hello! My name is Armando Peña. I'm an environmental technology engineering student, living in Mexico. 
 
-I also want to give free and easy access to this information for people interested in learning data analytics. 
+I have knowledge in Python programming, and I decided to use it for data analysis and data science.
+
+I made this site as a portfolio and also to share my learning path and knowledge of data analytics and data science. 
+
+I want to give free and easy access to this information for people interested in learning data analytics. 
 
 I'll focus in the theoretical framework, instead of the coding part. Even so, the notebooks contain hidden code snippets, so you can learn with real code examples. 
 
 I hope you find this website interesting and useful. 
-
 
 ```{tableofcontents}
 ```
