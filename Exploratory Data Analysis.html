@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Markdown Files" href="markdown.html" />
-    <link rel="prev" title="Welcome!" href="intro.html" />
+    <link rel="prev" title="Data Science For Business!" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome!
+                    Data Science For Business!
                 </a>
             </li>
         </ul>
@@ -389,6 +389,28 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimates-of-variability">
+   Estimates of variability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standard-deviation">
+     Standard deviation.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variance-and-standard-deviation">
+     Variance and standard deviation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median-absolute-deviation">
+     Median absolute deviation
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -451,6 +473,28 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#median">
      Median
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimates-of-variability">
+   Estimates of variability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standard-deviation">
+     Standard deviation.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variance-and-standard-deviation">
+     Variance and standard deviation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median-absolute-deviation">
+     Median absolute deviation
     </a>
    </li>
   </ul>
@@ -518,13 +562,15 @@ Unstructured data must be processed and manipulated so that it can be represente
 </ul>
 <section id="mean-or-average-value">
 <h3>Mean or Average value:<a class="headerlink" href="#mean-or-average-value" title="Permalink to this headline">#</a></h3>
-<p>Is the sum of all values divided by the number of values.
-$<span class="math notranslate nohighlight">\(\bar x =  \frac{\sum _{i=1}^{n} x_i}{n} \)</span>$</p>
+<p>Is the sum of all values divided by the number of values.</p>
+<div class="math notranslate nohighlight">
+\[\bar x =  \frac{\sum _{i=1}^{n} x_i}{n} \]</div>
 </section>
 <section id="trimmed-mean">
 <h3>Trimmed mean:<a class="headerlink" href="#trimmed-mean" title="Permalink to this headline">#</a></h3>
-<p>Drop a fixed number of sorted values at each end and taking an average of the remaining values. It eliminates the influence of extreme values.
-$<span class="math notranslate nohighlight">\(\bar x =  \frac{\sum _{i=p+1}^{n-p} x_{(i)}}{n-2p} \)</span>$</p>
+<p>Drop a fixed number of sorted values at each end and taking an average of the remaining values. It eliminates the influence of extreme values.</p>
+<div class="math notranslate nohighlight">
+\[ \bar x =  \frac{\sum _{i=p+1}^{n-p} x_{(i)}}{n-2p} \]</div>
 </section>
 <section id="weighted-mean">
 <h3>Weighted mean<a class="headerlink" href="#weighted-mean" title="Permalink to this headline">#</a></h3>
@@ -538,13 +584,15 @@ It can also be used when the collected data does not equally represent the diffe
 <h3>Median<a class="headerlink" href="#median" title="Permalink to this headline">#</a></h3>
 <p>The middle number on a sorted list, or the average of the two values in the middle in case of an even data list.</p>
 <p>It’s referred to as a robust estimate since it is not influenced by outliers (extreme cases)</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="o">!</span>pip install wquantiles
+<span class="o">!</span>pip install statsmodels
 <span class="kn">import</span> <span class="nn">wquantiles</span>
+<span class="kn">from</span> <span class="nn">statsmodels</span> <span class="kn">import</span> <span class="n">robust</span>
 </pre></div>
 </div>
 </div>
@@ -554,6 +602,23 @@ It can also be used when the collected data does not equally represent the diffe
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wquantiles in /home/lordaris/.local/lib/python3.10/site-packages (0.6)
 Requirement already satisfied: numpy&gt;=1.18 in /usr/lib/python3.10/site-packages (from wquantiles) (1.23.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /home/lordaris/.local/lib/python3.10/site-packages (0.13.2)
+Requirement already satisfied: pandas&gt;=0.25 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (1.4.2)
+Requirement already satisfied: numpy&gt;=1.17 in /usr/lib/python3.10/site-packages (from statsmodels) (1.23.3)
+Requirement already satisfied: packaging&gt;=21.3 in /usr/lib/python3.10/site-packages (from statsmodels) (21.3)
+Requirement already satisfied: patsy&gt;=0.5.2 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (0.5.2)
+Requirement already satisfied: scipy&gt;=1.3 in /usr/lib/python3.10/site-packages (from statsmodels) (1.9.1)
+Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/lib/python3.10/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2022.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
+Requirement already satisfied: six in /usr/lib/python3.10/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
 </pre></div>
 </div>
 </div>
@@ -657,7 +722,7 @@ Requirement already satisfied: numpy&gt;=1.18 in /usr/lib/python3.10/site-packag
 </table>
 </div></div></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">trim</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">trim_mean</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">)</span>
@@ -680,6 +745,138 @@ weighted median is 19.1875
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="estimates-of-variability">
+<h2>Estimates of variability<a class="headerlink" href="#estimates-of-variability" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Deviations</strong> (errors, residuals)</p></li>
+<li><p><strong>Variance</strong> (mean-squared-error)</p></li>
+<li><p><strong>Standard Deviation</strong> (square root of the variance)</p></li>
+<li><p><strong>Mean absolute deviation</strong> (l1-norm, Manhattan norm)</p></li>
+<li><p><strong>Median absolute deviation from the median</strong></p></li>
+<li><p><strong>Range</strong></p></li>
+<li><p><strong>Order statistics</strong> (ranks)</p></li>
+<li><p><strong>Percentile</strong> (quantile)</p></li>
+<li><p><strong>Interquartile range</strong> (IQR)</p></li>
+</ul>
+<section id="standard-deviation">
+<h3>Standard deviation.<a class="headerlink" href="#standard-deviation" title="Permalink to this headline">#</a></h3>
+<p>It is based on deviations between the estimate of location and the observed data. They tell us how dispersed is the data around the central value.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;col1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]})</span>
+<span class="n">mean_</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">median_</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The mean is </span><span class="si">{</span><span class="n">mean_</span><span class="si">}</span><span class="s2"> and the median is </span><span class="si">{</span><span class="n">median_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean is 3.6 and the median is 3.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The deviations from the mean are the differences:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_</span><span class="p">[</span><span class="s2">&quot;deviations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="n">median_</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]]</span>
+<span class="n">list_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>col1</th>
+      <th>deviations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>-2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>-1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7</td>
+      <td>4.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The sum of deviations from the mean is zero.</p>
+<p>Mean absolute deviation consists in the sum of the absolute values of the deviations from the mean and their average
+$<span class="math notranslate nohighlight">\({Mean absolute deviation} =  \frac{\sum _{i=1}^{n} \left | x_{i}-\bar{x} \right |}{n} \)</span>$</p>
+</section>
+<section id="variance-and-standard-deviation">
+<h3>Variance and standard deviation<a class="headerlink" href="#variance-and-standard-deviation" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[ s^{2} =  \frac{\sum _{i=1}^{n}  (x_{i}-\bar{x})^{2} }{n-1}  \]</div>
+<div class="math notranslate nohighlight">
+\[s = \sqrt{variance}\]</div>
+<p>They are sensitive to outliers since they are based on the squared deviations.</p>
+</section>
+<section id="median-absolute-deviation">
+<h3>Median absolute deviation<a class="headerlink" href="#median-absolute-deviation" title="Permalink to this headline">#</a></h3>
+<p>Is a robust estimate of variability</p>
+<div class="math notranslate nohighlight">
+\[MAD = Median(\left | x_{1} -m \right |, \left | x_{2} -m \right |,...,\left | x_{N} -m \right |)\]</div>
+<p>where m is the median.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_abs_dev</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mad</span><span class="p">()</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">var_</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">mad</span> <span class="o">=</span> <span class="n">robust</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">mad</span><span class="p">(</span><span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean absolute deviation </span><span class="si">{</span><span class="n">mean_abs_dev</span><span class="si">}</span><span class="se">\n</span><span class="s2">Standar deviation </span><span class="si">{</span><span class="n">sd</span><span class="si">}</span><span class="se">\n</span><span class="s2">Variance </span><span class="si">{</span><span class="n">var_</span><span class="si">}</span><span class="se">\n</span><span class="s2">Median absolute deviation </span><span class="si">{</span><span class="n">mad</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean absolute deviation 1.9200000000000004
+Standar deviation 2.408318915758459
+Variance 5.799999999999999
+Median absolute deviation 2.965204437011204
+</pre></div>
+</div>
+</div>
+</div>
+<p>SD is always greater than mean absolute deviation, which is greater than the MAD</p>
 </section>
 </section>
 </section>
@@ -715,7 +912,7 @@ weighted median is 19.1875
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome!</p>
+            <p class="prev-next-title">Data Science For Business!</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="markdown.html" title="next page">
