@@ -372,6 +372,21 @@ title="Print to PDF"
      Mean or Average value:
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trimmed-mean">
+     Trimmed mean:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weighted-mean">
+     Weighted mean
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median">
+     Median
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -421,6 +436,21 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mean-or-average-value">
      Mean or Average value:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trimmed-mean">
+     Trimmed mean:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weighted-mean">
+     Weighted mean
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median">
+     Median
     </a>
    </li>
   </ul>
@@ -488,9 +518,168 @@ Unstructured data must be processed and manipulated so that it can be represente
 </ul>
 <section id="mean-or-average-value">
 <h3>Mean or Average value:<a class="headerlink" href="#mean-or-average-value" title="Permalink to this headline">#</a></h3>
-<p>Is the sum of all values divided by the number of values.</p>
+<p>Is the sum of all values divided by the number of values.
+$<span class="math notranslate nohighlight">\(\bar x =  \frac{\sum _{i=1}^{n} x_i}{n} \)</span>$</p>
+</section>
+<section id="trimmed-mean">
+<h3>Trimmed mean:<a class="headerlink" href="#trimmed-mean" title="Permalink to this headline">#</a></h3>
+<p>Drop a fixed number of sorted values at each end and taking an average of the remaining values. It eliminates the influence of extreme values.
+$<span class="math notranslate nohighlight">\(\bar x =  \frac{\sum _{i=p+1}^{n-p} x_{(i)}}{n-2p} \)</span>$</p>
+</section>
+<section id="weighted-mean">
+<h3>Weighted mean<a class="headerlink" href="#weighted-mean" title="Permalink to this headline">#</a></h3>
+<p>Multiply each data value <span class="math notranslate nohighlight">\(x_i\)</span> by a user-specified weight <span class="math notranslate nohighlight">\(w_i\)</span> and divide their sum by the sum of the weights.</p>
+<p>It can be used when a value is more variable than other. A highly variable (therefore less accurate) observation are given a lower weight.
+It can also be used when the collected data does not equally represent the different groups that we are interested in measuring. Values from the groups that were underrepresented can get a higher weight.</p>
 <div class="math notranslate nohighlight">
-\[\bar x =  \frac{\sum _{i=1}^{n} x_i}{n} \]</div>
+\[\bar x_{w} =  \frac{\sum _{i=1}^{n} w_{i}x_{i}}{\sum _{i=1}^{n} w_{i}} \]</div>
+</section>
+<section id="median">
+<h3>Median<a class="headerlink" href="#median" title="Permalink to this headline">#</a></h3>
+<p>The middle number on a sorted list, or the average of the two values in the middle in case of an even data list.</p>
+<p>It’s referred to as a robust estimate since it is not influenced by outliers (extreme cases)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">!</span>pip install wquantiles
+<span class="kn">import</span> <span class="nn">wquantiles</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Defaulting to user installation because normal site-packages is not writeable
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wquantiles in /home/lordaris/.local/lib/python3.10/site-packages (0.6)
+Requirement already satisfied: numpy&gt;=1.18 in /usr/lib/python3.10/site-packages (from wquantiles) (1.23.3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#define DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;points&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+                   <span class="s1">&#39;assists&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+                   <span class="s1">&#39;rebounds&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>points</th>
+      <th>assists</th>
+      <th>rebounds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>25</td>
+      <td>5</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>12</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>15</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>14</td>
+      <td>9</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>19</td>
+      <td>12</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>23</td>
+      <td>9</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>25</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>30</td>
+      <td>4</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1</td>
+      <td>5</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>20</td>
+      <td>4</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">trim</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">trim_mean</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">median_</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">weighted_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;assists&quot;</span><span class="p">])</span>
+<span class="n">weighted_median</span> <span class="o">=</span> <span class="n">wquantiles</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;assists&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mean is </span><span class="si">{</span><span class="n">mean_</span><span class="si">}</span><span class="s2">,</span><span class="se">\n</span><span class="s2">trim_mean is </span><span class="si">{</span><span class="n">trim</span><span class="si">}</span><span class="s2">,</span><span class="se">\</span>
+<span class="s2">      </span><span class="se">\n</span><span class="s2">median is </span><span class="si">{</span><span class="n">median_</span><span class="si">}</span><span class="s2">,</span><span class="se">\n</span><span class="s2">weighted mean is </span><span class="si">{</span><span class="n">weighted_mean</span><span class="si">}</span><span class="s2">,</span><span class="se">\</span>
+<span class="s2">      </span><span class="se">\n</span><span class="s2">weighted median is </span><span class="si">{</span><span class="n">weighted_median</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean is 18.4,
+trim_mean is 19.125,      
+median is 19.5,
+weighted mean is 18.380281690140844,      
+weighted median is 19.1875
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
