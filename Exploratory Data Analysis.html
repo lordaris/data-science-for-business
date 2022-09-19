@@ -400,6 +400,72 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explore-data-distribution">
+   Explore data distribution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frequency-tables-and-histograms">
+     Frequency tables and histograms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histogram">
+     Histogram
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#density-plot">
+     Density Plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-and-categorical-data">
+   Binary and categorical data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bar-charts">
+     Bar charts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mode">
+     Mode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expected-value">
+     Expected value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability">
+     Probability
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlation">
+   Correlation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlation-coefficient">
+     Correlation coefficient
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatterplots">
+     Scatterplots
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -493,6 +559,72 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explore-data-distribution">
+   Explore data distribution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frequency-tables-and-histograms">
+     Frequency tables and histograms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histogram">
+     Histogram
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#density-plot">
+     Density Plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-and-categorical-data">
+   Binary and categorical data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bar-charts">
+     Bar charts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mode">
+     Mode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expected-value">
+     Expected value
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability">
+     Probability
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlation">
+   Correlation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlation-coefficient">
+     Correlation coefficient
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatterplots">
+     Scatterplots
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -505,6 +637,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exploratory-data-analysis">
 <h1>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">#</a></h1>
+<div class="highlight-{Very notranslate"><div class="highlight"><pre><span></span>Important note: Most of the structure and some parts of the text are based on the book &quot;Practical Statistics for Data Scientists: 50+ Essential Concepts Using R and Python&quot;. Most of the code and all the datasets are different from the book for better exemplification
+</pre></div>
+</div>
 <section id="statistics">
 <h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">#</a></h2>
 <p>Is a branch of applied mathematics that involves the collection, description, analysis, and inference of conclusions from quantitative data.</p>
@@ -582,6 +717,7 @@ It can also be used when the collected data does not equally represent the diffe
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="o">!</span>pip install wquantiles
 <span class="o">!</span>pip install statsmodels
@@ -602,16 +738,16 @@ Requirement already satisfied: numpy&gt;=1.18 in /usr/lib/python3.10/site-packag
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /home/lordaris/.local/lib/python3.10/site-packages (0.13.2)
-Requirement already satisfied: pandas&gt;=0.25 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (1.4.2)
-Requirement already satisfied: packaging&gt;=21.3 in /usr/lib/python3.10/site-packages (from statsmodels) (21.3)
-Requirement already satisfied: numpy&gt;=1.17 in /usr/lib/python3.10/site-packages (from statsmodels) (1.23.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.3 in /usr/lib/python3.10/site-packages (from statsmodels) (1.9.1)
-Requirement already satisfied: patsy&gt;=0.5.2 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (0.5.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: patsy&gt;=0.5.2 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (0.5.2)
+Requirement already satisfied: scipy&gt;=1.3 in /usr/lib/python3.10/site-packages (from statsmodels) (1.9.1)
+Requirement already satisfied: packaging&gt;=21.3 in /usr/lib/python3.10/site-packages (from statsmodels) (21.3)
+Requirement already satisfied: numpy&gt;=1.17 in /usr/lib/python3.10/site-packages (from statsmodels) (1.23.3)
+Requirement already satisfied: pandas&gt;=0.25 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (1.4.2)
 Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/lib/python3.10/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2022.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
 Requirement already satisfied: six in /usr/lib/python3.10/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
 </pre></div>
 </div>
@@ -856,6 +992,7 @@ weighted median is 19.1875
 <section id="percentiles">
 <h3>Percentiles<a class="headerlink" href="#percentiles" title="Permalink to this headline">#</a></h3>
 <p>To avoid sensitivity to outliers, we can look at the range of the data after dropping values from each end. The Pth percentile is a value such that at least P percent of the values take on this value or less and at least (100-P) percent of the values take on this value or more.</p>
+<p>They indicate the value below which a given percentage of observations in a group of observations fall</p>
 <p>Interquartile range is a measurement of variability, and it’s the difference between 25th percentile and the 75th percentile.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -881,6 +1018,839 @@ the IQR is 4.0
 </div>
 </div>
 <p>SD is always greater than mean absolute deviation, which is greater than the MAD</p>
+</section>
+</section>
+<section id="explore-data-distribution">
+<h2>Explore data distribution<a class="headerlink" href="#explore-data-distribution" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Boxplot</strong></p></li>
+<li><p><strong>Frequency table</strong></p></li>
+<li><p><strong>Histogram</strong></p></li>
+<li><p><strong>Density plot</strong></p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">104</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">25</span><span class="p">]]),</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>104</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Percentiles of b by a&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Percentiles of b by a
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.05      3.25
+0.25     13.75
+0.50     62.50
+0.75    100.00
+0.95    103.00
+Name: b, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Boxplots are based on percentiles and give a quick way to visualize the distribution of data</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bp</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">b</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
+<span class="n">bp</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;b (tens)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The median is the middle line in the box, the top and bottom of the box are the 75th and 25th percentiles</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="s2">&quot;Horizontal lines from the top and bottom are the 95th and 5th percentiles.</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="s2">&quot;Outliers are sometimes plotted as individual dots that are in-line with whiskers (the vertical lines)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The median is the middle line in the box, the top and bottom of the box are the 75th and 25th percentiles
+Horizontal lines from the top and bottom are the 95th and 5th percentiles.
+Outliers are sometimes plotted as individual dots that are in-line with whiskers (the vertical lines)
+</pre></div>
+</div>
+<img alt="_images/Exploratory Data Analysis_31_1.png" src="_images/Exploratory Data Analysis_31_1.png" />
+</div>
+</div>
+<section id="frequency-tables-and-histograms">
+<h3>Frequency tables and histograms<a class="headerlink" href="#frequency-tables-and-histograms" title="Permalink to this headline">#</a></h3>
+<p>A frequency table (or frequency distribution) lists a set of values and how often each one appears.
+These tables help you understand which data values are common and which are rare.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="s2">&quot;Cat&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;María&quot;</span><span class="p">,</span> <span class="s2">&quot;Dog&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Cat&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Martha&quot;</span><span class="p">,</span> <span class="s2">&quot;Hamster&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Lucía&quot;</span><span class="p">,</span> <span class="s2">&quot;Bunny&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Liam&quot;</span><span class="p">,</span> <span class="s2">&quot;Cat&quot;</span><span class="p">],[</span><span class="s2">&quot;Noah&quot;</span><span class="p">,</span> <span class="s2">&quot;Cat&quot;</span><span class="p">],[</span><span class="s2">&quot;Oliver&quot;</span><span class="p">,</span> <span class="s2">&quot;Fish&quot;</span><span class="p">],[</span><span class="s2">&quot;Olivia&quot;</span><span class="p">,</span> <span class="s2">&quot;Snake&quot;</span><span class="p">]]),</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Owner&#39;</span><span class="p">,</span> <span class="s1">&#39;Pet&#39;</span><span class="p">])</span>
+<span class="n">df1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Owner</th>
+      <th>Pet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ana</td>
+      <td>Cat</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>María</td>
+      <td>Dog</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Diana</td>
+      <td>Cat</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Martha</td>
+      <td>Hamster</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Lucía</td>
+      <td>Bunny</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Liam</td>
+      <td>Cat</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Noah</td>
+      <td>Cat</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Oliver</td>
+      <td>Fish</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Olivia</td>
+      <td>Snake</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">Pet</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cat        4
+Dog        1
+Hamster    1
+Bunny      1
+Fish       1
+Snake      1
+Name: Pet, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Values can be mapped into segments using the pandas .cut function.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="c1"># Make a table from Gross domestic product by state in Mexico.</span>
+<span class="c1"># I chose to use the &quot;aggregate gross value from 2020&quot;</span>
+<span class="n">pibe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/PIBE_2.csv&quot;</span><span class="p">)</span>
+<span class="n">pibe</span> <span class="o">=</span> <span class="n">pibe</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">38</span><span class="p">]</span>
+<span class="n">pibe</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Concepto&quot;</span><span class="p">:</span> <span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;2020 R&quot;</span><span class="p">:</span> <span class="s2">&quot;Aggregate gross value 2020&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pibe</span> <span class="o">=</span> <span class="n">pibe</span><span class="p">[[</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;Aggregate gross value 2020&quot;</span><span class="p">]]</span>
+<span class="n">pibe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>Aggregate gross value 2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>Aguascalientes</td>
+      <td>204726.037</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Baja California</td>
+      <td>553650.356</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Baja California Sur</td>
+      <td>121985.608</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Campeche</td>
+      <td>481994.490</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Coahuila de Zaragoza</td>
+      <td>535558.427</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Colima</td>
+      <td>101247.641</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Chiapas</td>
+      <td>254356.257</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Chihuahua</td>
+      <td>538030.466</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Ciudad de México</td>
+      <td>2856750.909</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Durango</td>
+      <td>189703.349</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Guanajuato</td>
+      <td>650174.559</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Guerrero</td>
+      <td>219138.427</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Hidalgo</td>
+      <td>243488.874</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Jalisco</td>
+      <td>1125698.536</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>México</td>
+      <td>1484568.874</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Michoacán de Ocampo</td>
+      <td>396644.274</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Morelos</td>
+      <td>179567.493</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Nayarit</td>
+      <td>107124.831</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Nuevo León</td>
+      <td>1267121.013</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Oaxaca</td>
+      <td>237176.764</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Puebla</td>
+      <td>531159.173</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Querétaro</td>
+      <td>365428.624</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Quintana Roo</td>
+      <td>222133.890</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>San Luis Potosí</td>
+      <td>341481.841</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Sinaloa</td>
+      <td>369802.681</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Sonora</td>
+      <td>551290.303</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Tabasco</td>
+      <td>464462.272</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Tamaulipas</td>
+      <td>473081.269</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Tlaxcala</td>
+      <td>90940.710</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Veracruz de Ignacio de la Llave</td>
+      <td>737613.128</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Yucatán</td>
+      <td>242545.350</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Zacatecas</td>
+      <td>145329.949</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binnedVAB</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">pibe</span><span class="p">[</span><span class="s2">&quot;Aggregate gross value 2020&quot;</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A Frequency table from the aggregate gross value in 2020&quot;</span><span class="p">)</span>
+<span class="n">binnedVAB</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A Frequency table from the aggregate gross value in 2020
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(88174.9, 367521.73]          16
+(367521.73, 644102.75]        10
+(644102.75, 920683.77]         2
+(920683.77, 1197264.79]        1
+(1197264.79, 1473845.809]      1
+(1473845.809, 1750426.829]     1
+(2580169.889, 2856750.909]     1
+(1750426.829, 2027007.849]     0
+(2027007.849, 2303588.869]     0
+(2303588.869, 2580169.889]     0
+Name: Aggregate gross value 2020, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="histogram">
+<h3>Histogram<a class="headerlink" href="#histogram" title="Permalink to this headline">#</a></h3>
+<p>a graph that shows the frequency of numerical data using rectangles</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="p">(</span><span class="n">pibe</span><span class="p">[</span><span class="s1">&#39;Aggregate gross value 2020&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1_000_000</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Aggregate gross value (Millions)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Aggregate gross value (Millions)&#39;)
+</pre></div>
+</div>
+<img alt="_images/Exploratory Data Analysis_39_1.png" src="_images/Exploratory Data Analysis_39_1.png" />
+</div>
+</div>
+</section>
+<section id="density-plot">
+<h3>Density Plot<a class="headerlink" href="#density-plot" title="Permalink to this headline">#</a></h3>
+<p>visualises the distribution of data over a continuous interval or time period. This chart is a variation of a Histogram that uses kernel smoothing to plot values, allowing for smoother distributions by smoothing out the noise</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">pibe</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Aggregate gross value 2020&quot;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fb49fc91b70&gt;
+</pre></div>
+</div>
+<img alt="_images/Exploratory Data Analysis_41_1.png" src="_images/Exploratory Data Analysis_41_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="binary-and-categorical-data">
+<h2>Binary and categorical data<a class="headerlink" href="#binary-and-categorical-data" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Mode</strong></p></li>
+<li><p><strong>Expected value</strong></p></li>
+<li><p><strong>Bar charts</strong></p></li>
+<li><p><strong>Pie charts</strong></p></li>
+</ul>
+<section id="bar-charts">
+<h3>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">#</a></h3>
+<p>A bar chart is a graph with rectangular bars. The graph usually compares different categories. Although the graphs can be plotted vertically (bars standing up) or horizontally (bars laying flat from left to right), the most usual type of bar graph is vertical.
+Categories are listed on the x-axis and frequencies or proportions on the y-axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land_use</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;datasets/Land-use-per-gram-of-protein.xlsx&quot;</span><span class="p">)</span>
+<span class="n">land_use</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Land Use (in sqm)&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">land_use</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Food Type</th>
+      <th>Year</th>
+      <th>Land Use (in sqm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Beef/Mutton</td>
+      <td>2017</td>
+      <td>1.024301</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Pork</td>
+      <td>2017</td>
+      <td>0.129945</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Fresh Produce</td>
+      <td>2017</td>
+      <td>0.098235</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Poultry</td>
+      <td>2017</td>
+      <td>0.075102</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Eggs</td>
+      <td>2017</td>
+      <td>0.051358</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Land use per gram of protein&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">land_use</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Land Use (in sqm)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Food Type&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Land use per gram of protein
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Land Use (in sqm)&#39;, ylabel=&#39;Food Type&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Exploratory Data Analysis_45_2.png" src="_images/Exploratory Data Analysis_45_2.png" />
+</div>
+</div>
+</section>
+<section id="mode">
+<h3>Mode<a class="headerlink" href="#mode" title="Permalink to this headline">#</a></h3>
+<p>Is the value or values in case of a tie that appears most often in the data.</p>
+</section>
+<section id="expected-value">
+<h3>Expected value<a class="headerlink" href="#expected-value" title="Permalink to this headline">#</a></h3>
+<p>It’s a generalization of the weighted average.
+It’s the arithmetic mean of a large number of independently selected outcomes of a random variable</p>
+<p>Multiply each outcome by its probability of occurrence: E.g. in a multiple choice with “a”, “b”, “c” and “d” as possible answers and 20 questions. guessing all “a”, then you can expect to get 25% right (5 out of 20).
+The probability (P) of getting a question right if you guess: .25
+The number of questions on the test (n)*: 20
+P x n = .25 x 20 = 5</p>
+</section>
+<section id="probability">
+<h3>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">#</a></h3>
+<p>For simple means, the probability that an event will happen is the proportion of times it will occur if the situation could be repeated over and over, countless times.</p>
+</section>
+</section>
+<section id="correlation">
+<h2>Correlation<a class="headerlink" href="#correlation" title="Permalink to this headline">#</a></h2>
+<p>Any statistical relationship, whether causal or not, between two random variables or bi-variate data.</p>
+<ul class="simple">
+<li><p><strong>Correlation coefficient</strong></p></li>
+<li><p><strong>Correlation matrix</strong></p></li>
+<li><p><strong>Scatterplot</strong></p></li>
+</ul>
+<section id="correlation-coefficient">
+<h3>Correlation coefficient<a class="headerlink" href="#correlation-coefficient" title="Permalink to this headline">#</a></h3>
+<p>gives an estimate of the correlation between two variables that always lies on the same scale.</p>
+<p>To compute Pearson’s Correlation Coefficient, multiply deviations from the mean for variable 1 times those for variable 2 and divide by the product of the standard deviations.</p>
+<div class="math notranslate nohighlight">
+\[r = \sum_{i=1}^{n}\frac{\left (x_{i}-\bar{x} \right )\left(y_{i}-\bar{y} \right )}{(n-1)s_{x}s_{y}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_letters</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">rs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">33</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">rs</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">26</span><span class="p">)),</span>
+                 <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">ascii_letters</span><span class="p">[</span><span class="mi">26</span><span class="p">:]))</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">diverging_palette</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">.3</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">.5</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/Exploratory Data Analysis_50_1.png" src="_images/Exploratory Data Analysis_50_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A similar result can be achieved with pandas .corr()</span>
+<span class="n">d</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+      <th>G</th>
+      <th>H</th>
+      <th>I</th>
+      <th>J</th>
+      <th>...</th>
+      <th>Q</th>
+      <th>R</th>
+      <th>S</th>
+      <th>T</th>
+      <th>U</th>
+      <th>V</th>
+      <th>W</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>1.000000</td>
+      <td>-0.107401</td>
+      <td>-0.086468</td>
+      <td>0.000131</td>
+      <td>0.035047</td>
+      <td>0.004749</td>
+      <td>0.028226</td>
+      <td>0.000422</td>
+      <td>0.132100</td>
+      <td>0.057720</td>
+      <td>...</td>
+      <td>0.073645</td>
+      <td>-0.055396</td>
+      <td>-0.058241</td>
+      <td>-0.123823</td>
+      <td>0.096451</td>
+      <td>-0.015178</td>
+      <td>0.172725</td>
+      <td>0.003791</td>
+      <td>0.005531</td>
+      <td>-0.011534</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>-0.107401</td>
+      <td>1.000000</td>
+      <td>0.254632</td>
+      <td>0.061506</td>
+      <td>0.043581</td>
+      <td>-0.078019</td>
+      <td>0.069133</td>
+      <td>-0.211278</td>
+      <td>-0.011796</td>
+      <td>0.085277</td>
+      <td>...</td>
+      <td>0.031315</td>
+      <td>0.100451</td>
+      <td>-0.103068</td>
+      <td>0.011187</td>
+      <td>-0.008536</td>
+      <td>-0.030730</td>
+      <td>-0.022978</td>
+      <td>-0.050483</td>
+      <td>-0.014468</td>
+      <td>0.078737</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-0.086468</td>
+      <td>0.254632</td>
+      <td>1.000000</td>
+      <td>-0.033682</td>
+      <td>-0.127464</td>
+      <td>0.141223</td>
+      <td>0.164793</td>
+      <td>-0.188574</td>
+      <td>-0.230059</td>
+      <td>0.145777</td>
+      <td>...</td>
+      <td>0.010497</td>
+      <td>0.051872</td>
+      <td>0.084793</td>
+      <td>0.167976</td>
+      <td>-0.043806</td>
+      <td>-0.057125</td>
+      <td>0.125580</td>
+      <td>-0.068426</td>
+      <td>-0.052764</td>
+      <td>0.094661</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>0.000131</td>
+      <td>0.061506</td>
+      <td>-0.033682</td>
+      <td>1.000000</td>
+      <td>0.086054</td>
+      <td>-0.153212</td>
+      <td>-0.000963</td>
+      <td>-0.017282</td>
+      <td>-0.109283</td>
+      <td>0.011056</td>
+      <td>...</td>
+      <td>-0.136959</td>
+      <td>-0.061816</td>
+      <td>0.134112</td>
+      <td>0.081143</td>
+      <td>0.124706</td>
+      <td>0.194911</td>
+      <td>-0.016944</td>
+      <td>-0.116963</td>
+      <td>0.054315</td>
+      <td>0.014383</td>
+    </tr>
+    <tr>
+      <th>E</th>
+      <td>0.035047</td>
+      <td>0.043581</td>
+      <td>-0.127464</td>
+      <td>0.086054</td>
+      <td>1.000000</td>
+      <td>-0.007159</td>
+      <td>0.157224</td>
+      <td>-0.096254</td>
+      <td>0.043785</td>
+      <td>0.015117</td>
+      <td>...</td>
+      <td>0.090499</td>
+      <td>0.041276</td>
+      <td>0.076138</td>
+      <td>0.027021</td>
+      <td>0.069976</td>
+      <td>-0.021745</td>
+      <td>0.104822</td>
+      <td>-0.047913</td>
+      <td>0.120465</td>
+      <td>0.080980</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div></div></div>
+</div>
+<p>There are other types of correlation coefficients such as Spearman’s rho or Kendall’s tau. They are based on the rank of the data, so they are robust to outliers and can handle certain types of nonlinearities.
+However, data scientist can generally stick to Pearson’s correlation coefficient and its robust alternatives for exploratory analysis. The appeal of rank based estimates is mostly for smaller data sets and specific hypothesis tests.</p>
+</section>
+<section id="scatterplots">
+<h3>Scatterplots<a class="headerlink" href="#scatterplots" title="Permalink to this headline">#</a></h3>
+<p>is a type of data display that shows the relationship between two numerical variables.</p>
+<p>for the next example I selected two columns with strong correlation based on the previous heatmap</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;N&#39;, ylabel=&#39;S&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/Exploratory Data Analysis_54_1.png" src="_images/Exploratory Data Analysis_54_1.png" />
+</div>
+</div>
 </section>
 </section>
 </section>
