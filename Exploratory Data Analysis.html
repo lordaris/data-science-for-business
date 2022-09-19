@@ -409,6 +409,11 @@ title="Print to PDF"
      Median absolute deviation
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percentiles">
+     Percentiles
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -495,6 +500,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#median-absolute-deviation">
      Median absolute deviation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#percentiles">
+     Percentiles
     </a>
    </li>
   </ul>
@@ -608,16 +618,16 @@ Requirement already satisfied: numpy&gt;=1.18 in /usr/lib/python3.10/site-packag
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /home/lordaris/.local/lib/python3.10/site-packages (0.13.2)
-Requirement already satisfied: pandas&gt;=0.25 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (1.4.2)
 Requirement already satisfied: numpy&gt;=1.17 in /usr/lib/python3.10/site-packages (from statsmodels) (1.23.3)
 Requirement already satisfied: packaging&gt;=21.3 in /usr/lib/python3.10/site-packages (from statsmodels) (21.3)
 Requirement already satisfied: patsy&gt;=0.5.2 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (0.5.2)
 Requirement already satisfied: scipy&gt;=1.3 in /usr/lib/python3.10/site-packages (from statsmodels) (1.9.1)
-Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/lib/python3.10/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
+Requirement already satisfied: pandas&gt;=0.25 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (1.4.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2022.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/lib/python3.10/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
 Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2022.1)
 Requirement already satisfied: six in /usr/lib/python3.10/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
 </pre></div>
 </div>
@@ -765,7 +775,7 @@ weighted median is 19.1875
 <p>It is based on deviations between the estimate of location and the observed data. They tell us how dispersed is the data around the central value.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;col1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;col1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]})</span>
 <span class="n">mean_</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">median_</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The mean is </span><span class="si">{</span><span class="n">mean_</span><span class="si">}</span><span class="s2"> and the median is </span><span class="si">{</span><span class="n">median_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -773,7 +783,7 @@ weighted median is 19.1875
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean is 3.6 and the median is 3.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean is 8.2 and the median is 5.0
 </pre></div>
 </div>
 </div>
@@ -813,35 +823,36 @@ weighted median is 19.1875
     <tr>
       <th>0</th>
       <td>1</td>
-      <td>-2.0</td>
+      <td>-4.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>-1.0</td>
+      <td>25</td>
+      <td>20.0</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>0.0</td>
+      <td>-2.0</td>
     </tr>
     <tr>
       <th>3</th>
       <td>5</td>
-      <td>2.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>4</th>
       <td>7</td>
-      <td>4.0</td>
+      <td>2.0</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 <p>The sum of deviations from the mean is zero.</p>
-<p>Mean absolute deviation consists in the sum of the absolute values of the deviations from the mean and their average
-$<span class="math notranslate nohighlight">\({Mean absolute deviation} =  \frac{\sum _{i=1}^{n} \left | x_{i}-\bar{x} \right |}{n} \)</span>$</p>
+<p>Mean absolute deviation consists in the sum of the absolute values of the deviations from the mean and their average</p>
+<div class="math notranslate nohighlight">
+\[{Mean absolute deviation} =  \frac{\sum _{i=1}^{n} \left | x_{i}-\bar{x} \right |}{n} \]</div>
 </section>
 <section id="variance-and-standard-deviation">
 <h3>Variance and standard deviation<a class="headerlink" href="#variance-and-standard-deviation" title="Permalink to this headline">#</a></h3>
@@ -849,7 +860,7 @@ $<span class="math notranslate nohighlight">\({Mean absolute deviation} =  \frac
 \[ s^{2} =  \frac{\sum _{i=1}^{n}  (x_{i}-\bar{x})^{2} }{n-1}  \]</div>
 <div class="math notranslate nohighlight">
 \[s = \sqrt{variance}\]</div>
-<p>They are sensitive to outliers since they are based on the squared deviations.</p>
+<p>They are sensitive to outliers since they are based on the squared deviations (both numbers are going to be very high in this example because of the “25” in the index 1 of col1)</p>
 </section>
 <section id="median-absolute-deviation">
 <h3>Median absolute deviation<a class="headerlink" href="#median-absolute-deviation" title="Permalink to this headline">#</a></h3>
@@ -857,6 +868,11 @@ $<span class="math notranslate nohighlight">\({Mean absolute deviation} =  \frac
 <div class="math notranslate nohighlight">
 \[MAD = Median(\left | x_{1} -m \right |, \left | x_{2} -m \right |,...,\left | x_{N} -m \right |)\]</div>
 <p>where m is the median.</p>
+</section>
+<section id="percentiles">
+<h3>Percentiles<a class="headerlink" href="#percentiles" title="Permalink to this headline">#</a></h3>
+<p>To avoid sensitivity to outliers, we can look at the range of the data after dropping values from each end. The Pth percentile is a value such that at least P percent of the values take on this value or less and at least (100-P) percent of the values take on this value or more.</p>
+<p>Interquartile range is a measurement of variability, and it’s the difference between 25th percentile and the 75th percentile.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_abs_dev</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mad</span><span class="p">()</span>
@@ -864,14 +880,18 @@ $<span class="math notranslate nohighlight">\({Mean absolute deviation} =  \frac
 <span class="n">var_</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
 <span class="n">mad</span> <span class="o">=</span> <span class="n">robust</span><span class="o">.</span><span class="n">scale</span><span class="o">.</span><span class="n">mad</span><span class="p">(</span><span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean absolute deviation </span><span class="si">{</span><span class="n">mean_abs_dev</span><span class="si">}</span><span class="se">\n</span><span class="s2">Standar deviation </span><span class="si">{</span><span class="n">sd</span><span class="si">}</span><span class="se">\n</span><span class="s2">Variance </span><span class="si">{</span><span class="n">var_</span><span class="si">}</span><span class="se">\n</span><span class="s2">Median absolute deviation </span><span class="si">{</span><span class="n">mad</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">col1</span> <span class="o">=</span> <span class="n">list_</span><span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">]</span>
+<span class="n">iqr</span> <span class="o">=</span> <span class="n">col1</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span> <span class="o">-</span> <span class="n">col1</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the IQR is </span><span class="si">{</span><span class="n">iqr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean absolute deviation 1.9200000000000004
-Standar deviation 2.408318915758459
-Variance 5.799999999999999
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean absolute deviation 6.719999999999999
+Standar deviation 9.654014708917737
+Variance 93.2
 Median absolute deviation 2.965204437011204
+the IQR is 4.0
 </pre></div>
 </div>
 </div>
