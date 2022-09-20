@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Bank customer churn EDA" href="Bank_Customer_Churn_EDA.html" />
-    <link rel="prev" title="Data Science For Business!" href="intro.html" />
+    <link rel="prev" title="Armando’s portfolio" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Data Science For Business!
+                    Armando’s portfolio
                 </a>
             </li>
         </ul>
@@ -643,7 +643,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="exploratory-data-analysis">
 <h1>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">#</a></h1>
-<p>Important note: Most of the structure and some parts of the text are based on the book “Practical Statistics for Data Scientists: 50+ Essential Concepts Using R and Python”. Most of the code and all the datasets are different from the book for better exemplification</p>
+<p>Important note: Most of the structure and some parts of the text are based on the book <strong><a class="reference external" href="https://amzn.to/3LvOdG6">“Practical Statistics for Data Scientists: 50+ Essential Concepts Using R and Python”</a></strong>. Most of the code and all the datasets are different from the book for better exemplification.
+You can buy the book to get the original examples and full information <strong><a class="reference external" href="https://amzn.to/3LvOdG6">here</a></strong> or clicking the name of the book above.</p>
 <section id="statistics">
 <h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">#</a></h2>
 <p>Is a branch of applied mathematics that involves the collection, description, analysis, and inference of conclusions from quantitative data.</p>
@@ -744,14 +745,14 @@ Requirement already satisfied: numpy&gt;=1.18 in /usr/lib/python3.10/site-packag
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /home/lordaris/.local/lib/python3.10/site-packages (0.13.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.3 in /usr/lib/python3.10/site-packages (from statsmodels) (1.9.1)
-Requirement already satisfied: patsy&gt;=0.5.2 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (0.5.2)
-Requirement already satisfied: pandas&gt;=0.25 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (1.4.2)
-Requirement already satisfied: numpy&gt;=1.17 in /usr/lib/python3.10/site-packages (from statsmodels) (1.23.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: patsy&gt;=0.5.2 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (0.5.2)
 Requirement already satisfied: packaging&gt;=21.3 in /usr/lib/python3.10/site-packages (from statsmodels) (21.3)
+Requirement already satisfied: scipy&gt;=1.3 in /usr/lib/python3.10/site-packages (from statsmodels) (1.9.1)
+Requirement already satisfied: numpy&gt;=1.17 in /usr/lib/python3.10/site-packages (from statsmodels) (1.23.3)
+Requirement already satisfied: pandas&gt;=0.25 in /home/lordaris/.local/lib/python3.10/site-packages (from statsmodels) (1.4.2)
 Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /usr/lib/python3.10/site-packages (from packaging&gt;=21.3-&gt;statsmodels) (3.0.9)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
 Requirement already satisfied: pytz&gt;=2020.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2022.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/lib/python3.10/site-packages (from pandas&gt;=0.25-&gt;statsmodels) (2.8.2)
 Requirement already satisfied: six in /usr/lib/python3.10/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
 </pre></div>
 </div>
@@ -1136,7 +1137,7 @@ Horizontal lines from the top and bottom are the 95th and 5th percentiles.
 Outliers are sometimes plotted as individual dots that are in-line with whiskers (the vertical lines)
 </pre></div>
 </div>
-<img alt="_images/Exploratory Data Analysis_32_1.png" src="_images/Exploratory Data Analysis_32_1.png" />
+<img alt="_images/Exploratory Data Analysis_33_1.png" src="_images/Exploratory Data Analysis_33_1.png" />
 </div>
 </div>
 <section id="frequency-tables-and-histograms">
@@ -1486,7 +1487,7 @@ Name: Aggregate gross value 2020, dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Aggregate gross value (Millions)&#39;)
 </pre></div>
 </div>
-<img alt="_images/Exploratory Data Analysis_40_1.png" src="_images/Exploratory Data Analysis_40_1.png" />
+<img alt="_images/Exploratory Data Analysis_41_1.png" src="_images/Exploratory Data Analysis_41_1.png" />
 </div>
 </div>
 </section>
@@ -1500,10 +1501,10 @@ Name: Aggregate gross value 2020, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7f3ecf099c60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fdbf7834220&gt;
 </pre></div>
 </div>
-<img alt="_images/Exploratory Data Analysis_42_1.png" src="_images/Exploratory Data Analysis_42_1.png" />
+<img alt="_images/Exploratory Data Analysis_43_1.png" src="_images/Exploratory Data Analysis_43_1.png" />
 </div>
 </div>
 </section>
@@ -1601,7 +1602,7 @@ Categories are listed on the x-axis and frequencies or proportions on the y-axis
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Land Use (in sqm)&#39;, ylabel=&#39;Food Type&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/Exploratory Data Analysis_46_2.png" src="_images/Exploratory Data Analysis_46_2.png" />
+<img alt="_images/Exploratory Data Analysis_47_2.png" src="_images/Exploratory Data Analysis_47_2.png" />
 </div>
 </div>
 </section>
@@ -1657,7 +1658,7 @@ P x n = .25 x 20 = 5</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/Exploratory Data Analysis_51_1.png" src="_images/Exploratory Data Analysis_51_1.png" />
+<img alt="_images/Exploratory Data Analysis_52_1.png" src="_images/Exploratory Data Analysis_52_1.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1852,7 +1853,7 @@ However, data scientist can generally stick to Pearson’s correlation coefficie
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;N&#39;, ylabel=&#39;S&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/Exploratory Data Analysis_55_1.png" src="_images/Exploratory Data Analysis_55_1.png" />
+<img alt="_images/Exploratory Data Analysis_56_1.png" src="_images/Exploratory Data Analysis_56_1.png" />
 </div>
 </div>
 </section>
@@ -1890,7 +1891,7 @@ However, data scientist can generally stick to Pearson’s correlation coefficie
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Data Science For Business!</p>
+            <p class="prev-next-title">Armando’s portfolio</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Bank_Customer_Churn_EDA.html" title="next page">
